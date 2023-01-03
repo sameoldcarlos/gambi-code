@@ -1,4 +1,4 @@
-import CodeEditor from '@/components/CodeEditor.vue'
+import EditorSelector from '@/components/EditorSelector.vue'
 
 export default {
   setup() {
@@ -8,6 +8,6 @@ export default {
   },
 
   components: {
-    CodeEditor
+    EditorSelector
   }
 }

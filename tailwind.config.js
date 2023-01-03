@@ -10,7 +10,8 @@ module.exports = {
       'editor-border': colors.indigo[300],
       'logo-color': '#372F4B',
       'section-border': colors.neutral[400],
-      'editor-title': colors.white
+      'editor-title': colors.white,
+      'editor-t-hover': colors.yellow[500]
     },
     fontFamily: {
       primary: ['Righteous', 'cursive'],
@@ -18,7 +19,8 @@ module.exports = {
     },
     extend: {
       borderRadius: {
-        'editor-radius': '1rem 1rem 0 0'
+        'editor-radius': '1rem 1rem 0 0',
+        'tab-radius': '.5rem .5rem 0 0'
       }
     }
   },
