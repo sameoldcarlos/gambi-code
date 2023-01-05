@@ -11,7 +11,8 @@ module.exports = {
       'logo-color': '#372F4B',
       'section-border': colors.neutral[400],
       'editor-title': colors.white,
-      'editor-t-hover': colors.yellow[500]
+      'editor-t-hover': colors.yellow[500],
+      'editor-tools': colors.violet[200]
     },
     fontFamily: {
       primary: ['Righteous', 'cursive'],

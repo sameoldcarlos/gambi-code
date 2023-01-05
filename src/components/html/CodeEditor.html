@@ -1,3 +1,49 @@
 <div class="code-editor">
-  <div class="toolbar w-full h-8 bg-editor-toolbar"></div>
+  <div class="code-editor__toolbar w-full h-8 bg-editor-toolbar flex text-editor-tools">
+    <div class="code-editor__text-tools ml-2 flex gap-2">
+      <button
+        class="undo"
+        title="Desfazer"
+        @click="undoLast"
+      >
+        <vue-feather type="rotate-ccw" />
+      </button>
+      <button
+        class="redo"
+        title="Refazer"
+        @click="redoLast"
+      >
+        <vue-feather type="rotate-cw" />
+      </button>
+      <button
+        class="copy-to-clipboard ml-1"
+        title="Copiar"
+        @click="copy()"
+      >
+        <vue-feather
+          v-if="!copied"
+          type="clipboard"
+        />
+        <vue-feather
+          v-else
+          type="check"
+        />
+      </button>
+    </div>
+    <div class="code-editor__app-tools ml-auto mr-2 flex gap-2">
+      <button
+        class="download"
+        title="Baixar código"
+      >
+        <vue-feather type="download" />
+      </button>
+      <button
+        class="run"
+        title="Executar"
+      >
+        <vue-feather type="play" />
+      </button>
+    </div>
+  </div>
+  <div :class="`code-editor__editor--${language}`"></div>
 </div>

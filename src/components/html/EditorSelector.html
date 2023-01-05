@@ -2,14 +2,24 @@
   <div class="tabs w-full px-5 flex">
     <button
       v-for="tab in tabs"
-      class="h-11 px-2 font-secondary bg-editor-header rounded-tab-radius text-xl text-editor-title"
+      class="h-11 px-2 font-secondary rounded-tab-radius text-xl text-editor-title"
       :class="[isTabSelected(tab) ? 'bg-editor-toolbar' : 'hover:text-editor-t-hover']"
       @click="setSelectedTab(tab)"
     >
       {{ tab }}
     </button>
   </div>
-  <div class="editor-container w-full min-h-[360px] border-4 border-editor-toolbar">
-    <code-editor></code-editor>
+  <div class="editor-wrapper relative">
+    <div
+      v-for="tab in tabs"
+      class="editor-container w-full min-h-[360px] border-4 border-editor-toolbar absolute"
+    >
+      <code-editor
+        v-show="isTabSelected(tab)"
+        :class="{'z-10': isTabSelected(tab)}"
+        :language="tab.toLowerCase()"
+        @updateCode="updateContent"
+      ></code-editor>    
+    </div>
   </div>
 </section>
