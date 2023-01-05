@@ -1,8 +1,8 @@
-<section class="editor-selector w-full max-w-xl h-11 bg-editor-header rounded-editor-radius">
-  <div class="tabs w-full px-5 flex">
+<section class="editor-selector w-full max-w-xl h-[494px]">
+  <div class="editor-selector__header w-full px-5 h-11 bg-section-header rounded-section-radius flex">
     <button
       v-for="tab in tabs"
-      class="h-11 px-2 font-secondary rounded-tab-radius text-xl text-editor-title"
+      class="h-11 px-2 font-secondary rounded-tab-radius text-xl text-section-title"
       :class="[isTabSelected(tab) ? 'bg-editor-toolbar' : 'hover:text-editor-t-hover']"
       @click="setSelectedTab(tab)"
     >
@@ -19,6 +19,7 @@
         :class="{'z-10': isTabSelected(tab)}"
         :language="tab.toLowerCase()"
         @updateCode="updateContent"
+        @runCode="notifyRunner"
       ></code-editor>    
     </div>
   </div>

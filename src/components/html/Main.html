@@ -1,3 +1,4 @@
-<main class="w-full">
-  <editor-selector></editor-selector>
+<main class="w-full flex flex-col lg:flex-row gap-4">
+  <editor-manager @updateSource="renderSource"></editor-manager>
+  <output-module ref="outputModuleRef" :src-doc="outputSource"></output-module>
 </main>

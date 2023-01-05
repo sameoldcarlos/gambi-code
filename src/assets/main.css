@@ -32,3 +32,27 @@ a,
     width: 100%;
   }
 }
+
+.ͼ4 .cm-line::selection,
+.ͼ4 .cm-line ::selection {
+  background-color: #003d75 !important;
+}
+
+.cm-matchingBracket,
+.ͼ4 .cm-line {
+  caret-color: white !important;
+}
+
+.ͼo.cm-focused .cm-matchingBracket {
+  outline: none !important;
+  caret-color: #1389f8 !important;
+}
+
+.ͼo .cm-activeLine {
+  background-color: #2e353b !important;
+}
+
+.ͼ1.cm-editor {
+  height: 418px;
+  overflow: auto;
+}

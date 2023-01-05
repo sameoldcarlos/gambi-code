@@ -17,7 +17,7 @@ export default {
     }
   },
 
-  emits: ['updateCode'],
+  emits: ['updateCode', 'runCode'],
 
   setup(props, { emit }) {
     const { language } = toRefs(props)
@@ -39,6 +39,10 @@ export default {
     const { copy, copied } = useClipboard({ source: code })
 
     let editorInstance = null
+
+    function runCode() {
+      emit('runCode')
+    }
 
     function undoLast() {
       undo(editorInstance)
@@ -87,7 +91,8 @@ export default {
       undoLast,
       redoLast,
       copy,
-      copied
+      copied,
+      runCode
     }
   }
 }
