@@ -59,6 +59,10 @@ export default {
       }
     }
 
+    function downloadFiles() {
+      emit('downloadFiles')
+    }
+
     function mountEditor() {
       const parent = document.querySelector(`.code-editor__editor--${language.value}`)
       const extensions = [
@@ -92,7 +96,8 @@ export default {
       redoLast,
       copy,
       copied,
-      runCode
+      runCode,
+      downloadFiles
     }
   }
 }
