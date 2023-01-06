@@ -29,33 +29,19 @@ export default {
     }
 
     function notifyRunner() {
-      const iFrameSource = getSrcDoc()
+      const iFrameSource = getSrcDoc('run')
       emit('updateSource', iFrameSource)
     }
 
     function downloadFiles() {
       const zip = new JSZip()
-      const styles = zip.folder('css') 
-      styles.file('styles.css', editorContent.css.code)
+      const styles = zip.folder('css')
       const scripts = zip.folder('js')
+      
+      styles.file('styles.css', editorContent.css.code)
       scripts.file('scripts.js', editorContent.javascript.code)
 
-      zip.file('index.html', `
-        <!DOCTYPE html>
-        <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="./css/styles.css">
-            <script src="./js/scripts.js" defer></script>
-            <title>Gambi Code App</title>
-          </head>
-          <body>
-            ${editorContent['html'].code}
-          </body>
-        </html>
-      `)
+      zip.file('index.html', getSrcDoc('download'))
       zip.generateAsync({ type: "blob" })
         .then(function (content) {
           const a = document.createElement("a");
@@ -65,28 +51,43 @@ export default {
         });
     }
 
-    function getSrcDoc() {
-      const srcDoc = `
+    function getSrcDoc(command) {
+      let tags='', external = ''
+
+      if(command==='run') {
+        tags = `
+          <style>
+            ${editorContent['css'].code}
+          </style>
+          <script>
+            ${editorContent['javascript'].code}
+          </script>
+        `
+      }
+
+      if(command==='download') {
+        external = `
+          <link rel="stylesheet" href="./css/styles.css">
+          <script src="./js/scripts.js" defer></script>
+        `
+      }
+
+      return `
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="pt-BR">
           <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
+            ${external}
+            <title>Gambi Code App</title>
           </head>
           <body>
             ${editorContent['html'].code}
-            <style>
-              ${editorContent['css'].code}
-            </style>
-            <script>
-              ${editorContent['javascript'].code}
-            </script>
+            ${tags}
           </body>
         </html>
       `
-      return srcDoc
     }
 
     return {
