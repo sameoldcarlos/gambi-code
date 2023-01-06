@@ -59,7 +59,7 @@ export default {
           <style>
             ${editorContent['css'].code}
           </style>
-          <script>
+          <script type="module">
             ${editorContent['javascript'].code}
           </script>
         `
@@ -68,7 +68,7 @@ export default {
       if(command==='download') {
         external = `
           <link rel="stylesheet" href="./css/styles.css">
-          <script src="./js/scripts.js" defer></script>
+          <script type="module" src="./js/scripts.js" defer></script>
         `
       }
 
