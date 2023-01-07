@@ -8,11 +8,11 @@ module.exports = {
       'section-header': colors.violet[900],
       'editor-toolbar': colors.violet[500],
       'editor-border': colors.indigo[300],
-      'logo-color': '#372F4B',
       'section-border': colors.neutral[400],
       'section-title': colors.white,
       'editor-t-hover': colors.yellow[500],
-      'editor-tools': colors.violet[200]
+      'editor-tools': colors.violet[200],
+      'app-bg': colors.stone[900]
     },
     fontFamily: {
       primary: ['Righteous', 'cursive'],

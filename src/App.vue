@@ -1,9 +1,13 @@
 <script setup>
-import Main from '@/components/Main.vue'
+import MainVue from '@/components/Main.vue'
+import NavBar from '@/components/NavBar.vue'
 </script>
 
 <template>
-  <Main />
+  <div class="flex flex-col items-center">
+    <nav-bar />
+    <main-vue />
+  </div>
 </template>
 
 <style>

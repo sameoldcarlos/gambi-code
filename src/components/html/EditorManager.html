@@ -1,4 +1,4 @@
-<section class="editor-selector w-full max-w-xl h-[494px]">
+<section class="editor-selector w-full max-w-xl h-[504px]">
   <div class="editor-selector__header w-full px-5 h-11 bg-section-header rounded-section-radius flex">
     <button
       v-for="tab in tabs"
@@ -12,7 +12,7 @@
   <div class="editor-wrapper relative">
     <div
       v-for="tab in tabs"
-      class="editor-container w-full min-h-[360px] border-4 border-editor-toolbar absolute"
+      class="editor-container w-full min-h-[346px] border-4 border-editor-toolbar absolute"
     >
       <code-editor
         v-show="isTabSelected(tab)"

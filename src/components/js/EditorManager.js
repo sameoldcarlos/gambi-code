@@ -1,12 +1,14 @@
 import CodeEditor from '@/components/CodeEditor.vue'
 import JSZip from 'jszip'
 import {ref} from 'vue'
+import { useEventBus } from '@vueuse/core'
 
 export default {
   emits: ['runCode'],
   setup({}, { emit }) {
     const tabs = ref(['HTML', 'CSS', 'Javascript'])
     const selectedTab = ref('HTML')
+    const bus = useEventBus('managerAction')
     const editorContent = {
       html: {
         code: ''
@@ -19,6 +21,11 @@ export default {
       }
     }
     const isTabSelected = tab => selectedTab.value===tab
+
+    bus.on((event) => {
+      if(event==='notifyRunner') notifyRunner()
+      if(event==='downloadFiles') downloadFiles()
+    })
 
     function setSelectedTab(tab) {
       selectedTab.value = tab

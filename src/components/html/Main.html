@@ -1,4 +1,7 @@
-<main class="w-full flex flex-col lg:flex-row gap-4">
-  <editor-manager @updateSource="renderSource"></editor-manager>
+<main class="w-full max-w-5xl flex flex-col lg:flex-row content-center items-center place-content-between gap-4">
+  <editor-manager
+    ref="editorManagerRef"
+    @updateSource="renderSource"
+  />
   <output-module ref="outputModuleRef" :src-doc="outputSource"></output-module>
 </main>
