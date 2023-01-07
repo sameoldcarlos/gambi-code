@@ -2,21 +2,21 @@
   <div class="code-editor__toolbar w-full h-8 bg-editor-toolbar flex text-editor-tools">
     <div class="code-editor__text-tools ml-2 flex gap-2">
       <button
-        class="undo"
+        class="undo hover:text-section-header focus:text-section-header transition ease delay-100"
         title="Desfazer"
         @click="undoLast"
       >
         <vue-feather type="rotate-ccw" />
       </button>
       <button
-        class="redo"
+        class="redo hover:text-section-header focus:text-section-header transition ease delay-100"
         title="Refazer"
         @click="redoLast"
       >
         <vue-feather type="rotate-cw" />
       </button>
       <button
-        class="copy-to-clipboard ml-1"
+        class="copy-to-clipboard ml-1 hover:text-section-header focus:text-section-header transition ease delay-100"
         title="Copiar"
         @click="copy()"
       >
@@ -32,14 +32,14 @@
     </div>
     <div class="code-editor__app-tools ml-auto mr-2 flex gap-2">
       <button
-        class="download"
+        class="download hover:text-section-header focus:text-section-header transition ease delay-100"
         title="Baixar código"
         @click="downloadFiles"
       >
         <vue-feather type="download" />
       </button>
       <button
-        class="run"
+        class="run hover:text-section-header focus:text-section-header transition ease delay-100"
         title="Executar"
         @click="runCode"
       >
@@ -47,5 +47,5 @@
       </button>
     </div>
   </div>
-  <div :class="`code-editor__editor--${language}`"></div>
+  <div :class="`code-editor__editor--${language} text-sm`"></div>
 </div>

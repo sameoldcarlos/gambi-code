@@ -1,9 +1,9 @@
-<div class="w-full max-w-5xl bg-section-title dark:bg-app-bg border-b-2 border-section-border mb-4">
-  <nav class="container px-6 py-8 mx-auto lg:flex lg:justify-between lg:items-center">
+<div class="w-full bg-section-title dark:bg-app-bg border-b-2 border-section-border mb-4">
+  <nav class="container max-w-5xl px-6 py-4 mx-auto lg:flex lg:justify-between lg:items-center">
     <div class="flex items-center justify-between">
       <a 
         href="/"
-        class="text-4xl font-primary text-app-bg dark:text-section-border lg:text-2xl hover:text-section-header dark:hover:text-editor-toolbar"
+        class="transition ease-in-out delay-75 text-4xl font-primary text-app-bg dark:text-section-border lg:text-2xl hover:text-section-header dark:hover:text-editor-toolbar"
       >
         &#60;gambi :code&#62;
       </a>
@@ -22,29 +22,25 @@
 
     <ul
       :class="showMenu ? 'flex' : 'hidden'"
-      class="text-lg flex-col mt-8 space-y-4 lg:flex lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6 lg:mt-0
-    ">
-      <li class="text-app-bg hover:text-section-header dark:text-section-border dark:hover:text-editor-toolbar">
+      class="text-lg flex-col mt-8 space-y-4 lg:flex lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6 lg:mt-0"
+    >
+      <li class="transition ease-in-out delay-75 text-app-bg hover:text-section-header dark:text-section-border dark:hover:text-editor-toolbar">
         <button
           class="flex gap-2 ml-auto focus:outline-none"
           title="Baixar código"
           @click="downloadFiles"
         >
-          <span
-            class="lg:hidden font-bold"
-          >Download</span>
+          <span class="lg:hidden font-bold">Download</span>
           <vue-feather type="download" />
         </button>
       </li>
-      <li class="text-app-bg hover:text-section-header dark:text-section-border dark:hover:text-editor-toolbar">
+      <li class="transition ease-in-out delay-100 text-app-bg hover:text-section-header dark:text-section-border dark:hover:text-editor-toolbar">
         <button
           class="flex gap-2 ml-auto focus:outline-none"
           title="Executar"
           @click="notifyRunner"
         >
-          <span
-            class="lg:hidden font-bold"
-          >Executar</span>
+          <span class="lg:hidden font-bold">Executar</span>
           <vue-feather type="play" />
         </button>
       </li>

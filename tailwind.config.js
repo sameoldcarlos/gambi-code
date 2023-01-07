@@ -12,7 +12,8 @@ module.exports = {
       'section-title': colors.white,
       'editor-t-hover': colors.yellow[500],
       'editor-tools': colors.violet[200],
-      'app-bg': colors.stone[900]
+      'app-bg': colors.stone[900],
+      'app-secondary': colors.stone[800]
     },
     fontFamily: {
       primary: ['Righteous', 'cursive'],
