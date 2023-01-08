@@ -5,7 +5,7 @@ import FooterVue from '@/components/Footer.vue'
 </script>
 
 <template>
-  <div class="flex flex-col items-center dark:bg-app-secondary">
+  <div class="flex flex-col items-center dark:bg-app-secondary text-app-bg dark:text-section-title">
     <nav-bar />
     <main-vue />
     <footer-vue />
