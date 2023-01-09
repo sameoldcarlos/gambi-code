@@ -1,10 +1,22 @@
 <section class="runner-module w-full max-w-xl">
   <div class="runner-module__header h-11 bg-section-header rounded-section-radius">
-    <h2 class="px-8 py-2 font-secondary text-xl text-section-title">
-      Result
-    </h2>
+    <div class="w-full flex place-content-between px-8 py-2">
+      <h2 class="font-secondary text-xl text-section-title">
+        Result
+      </h2>
+      <button
+        title="Recarregar a página"
+        class="hover:text-editor-toolbar focus:outline-none"
+        @click="refresh"
+      >
+        <vue-feather type="refresh-cw"/>
+      </button>
+    </div>
   </div>
   <div class="runner-module__content bg-section-title h-[460px] overflow-auto border-4 border-editor-toolbar border-t-0">
-    <iframe class="h-full w-full" :srcdoc="output"></iframe>
+    <iframe 
+      ref="resultRef"
+      class="h-full w-full" :srcdoc="output"
+    ></iframe>
   </div>
 </section>

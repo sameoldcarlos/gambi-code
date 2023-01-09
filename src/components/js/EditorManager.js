@@ -4,7 +4,7 @@ import {ref} from 'vue'
 import { useEventBus } from '@vueuse/core'
 
 export default {
-  emits: ['runCode'],
+  emits: ['updateSource'],
   setup({}, { emit }) {
     const tabs = ref(['HTML', 'CSS', 'Javascript'])
     const selectedTab = ref('HTML')
