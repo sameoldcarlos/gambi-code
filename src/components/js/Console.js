@@ -1,4 +1,5 @@
 import { ref, toRefs } from 'vue'
+import { useEventBus } from '@vueuse/core'
 
 export default {
   props: {
@@ -12,6 +13,13 @@ export default {
     const consoleMsg = ref('')
     const hasError = ref(false)
     const { isVisible } = toRefs(props)
+    const bus = useEventBus('consoleAction')
+
+    bus.on((event) => {
+      if (event==='clearConsole') {
+        consoleMsg.value = ''
+      }
+    })
 
     window.addEventListener('message', event => {
       if (event.origin===window.location.origin) {
