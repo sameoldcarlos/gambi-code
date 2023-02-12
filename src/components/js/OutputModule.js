@@ -1,4 +1,5 @@
 import { computed,  ref, toRefs } from 'vue'
+import Console from '@/components/Console.vue'
 
 export default {
   props: {
@@ -12,6 +13,7 @@ export default {
     const { srcDoc } = toRefs(props)
     const output = computed(() => srcDoc.value)
     const resultRef = ref(null)
+    const showConsole = ref(false)
 
     function refresh() {
       if(!resultRef.value) return
@@ -19,11 +21,20 @@ export default {
       resultRef.value.contentWindow.location.reload()
     }
 
-    return {
-      output,
-      resultRef,
-      refresh
+    function toggleShowConsole() {
+      showConsole.value = !showConsole.value
     }
 
+    return {
+      output,
+      toggleShowConsole,
+      resultRef,
+      refresh,
+      showConsole
+    }
+  },
+
+  components: {
+    Console
   }
 }

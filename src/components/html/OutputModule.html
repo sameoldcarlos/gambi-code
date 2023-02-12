@@ -1,16 +1,25 @@
-<section class="runner-module w-full max-w-xl">
+<section class="runner-module w-full max-w-xl relative">
   <div class="runner-module__header h-11 bg-section-header rounded-section-radius">
     <div class="w-full flex place-content-between px-8 py-2">
       <h2 class="font-secondary text-xl text-section-title">
         Result
       </h2>
-      <button
-        title="Recarregar a página"
-        class="hover:text-editor-toolbar focus:outline-none"
-        @click="refresh"
-      >
-        <vue-feather type="refresh-cw"/>
-      </button>
+      <div>
+        <button
+          title="Mostrar/Ocultar Console"
+          class="hover:text-editor-toolbar focus:outline-none mr-4"
+          @click="toggleShowConsole"
+        >
+          <vue-feather type="terminal"/>
+        </button>
+        <button
+          title="Recarregar a página"
+          class="hover:text-editor-toolbar focus:outline-none"
+          @click="refresh"
+        >
+          <vue-feather type="refresh-cw"/>
+        </button>
+      </div>
     </div>
   </div>
   <div class="runner-module__content bg-section-title h-[460px] overflow-auto border-4 border-editor-toolbar border-t-0">
@@ -18,5 +27,8 @@
       ref="resultRef"
       class="h-full w-full" :srcdoc="output"
     ></iframe>
+  </div>
+  <div class="console-container absolute w-full bottom-0 left-0">
+    <Console :is-visible="showConsole"/>
   </div>
 </section>

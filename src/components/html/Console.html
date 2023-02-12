@@ -1,0 +1,10 @@
+<section
+  :class="[isVisible ? 'h-32 opacity-75': 'h-0 opacity-0']"
+  class="console w-full bg-app-bg p-2 ease-in duration-300 overflow-auto"
+>
+  <div
+    class="px-2"
+    :class="{'bg-console-error-bg text-console-error': hasError}">
+    {{ consoleMsg }}
+  </div>
+</section>

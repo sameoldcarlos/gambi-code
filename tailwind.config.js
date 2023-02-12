@@ -13,7 +13,9 @@ module.exports = {
       'editor-t-hover': colors.yellow[500],
       'editor-tools': colors.violet[200],
       'app-bg': colors.stone[900],
-      'app-secondary': colors.stone[800]
+      'app-secondary': colors.stone[800],
+      'console-error-bg': colors.red[900],
+      'console-error': colors.red[200]
     },
     fontFamily: {
       primary: ['Righteous', 'cursive'],

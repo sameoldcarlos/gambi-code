@@ -69,6 +69,7 @@ export default {
           <script type="module">
             ${editorContent['javascript'].code}
           </script>
+          <script src="/src/helpers/consoleBuilder.js"></script>
         `
       }
 
